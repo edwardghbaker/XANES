@@ -4,6 +4,7 @@ Created on Tue May 31 15:43:30 2022
 
 @author: Ed
 """
+#%%
 import numpy as np
 import pandas as pd
 import os as os
@@ -54,7 +55,7 @@ def norm(arr):
 
 #%% Read in data 
 
-directory = 'C:/Users/r11403eb/OneDrive - The University of Manchester/Diamond/ascii'
+directory = 'C:/Users/User/OneDrive - The University of Manchester/Diamond/ascii'
 fileNames = os.listdir(directory)
 
 main = pd.DataFrame({'Phase' :['?','g','g','?','f','f','f','f','f','f','g','g','g','g','g','x','x','x','g','g','x','x','x','g','g','x','x','x','x','f','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g','g'],
@@ -65,7 +66,7 @@ main = pd.DataFrame({'Phase' :['?','g','g','?','f','f','f','f','f','f','g','g','
 main['fo2'] = [fo2_logic(i) for i in main['Experiment']]
 main['data'] = [pd.read_csv(str(directory+'/'+i),header=28,sep="\s+") for i in fileNames]
 
-whoi = pd.read_excel(r'C:\Users\r11403eb\OneDrive - The University of Manchester\Experiments\CrTi in plagioclase\WHOI experiments.xlsx',sheet_name='Tabelle1',header=1,index_col = 0)
+whoi = pd.read_excel(r'C:\Users\User\OneDrive - The University of Manchester\Experiments\CrTi in plagioclase\WHOI experiments.xlsx',sheet_name='Tabelle1',header=1,index_col = 0)
 
 whoi1 = main[main.Experiment == 'WHOI1']
 whoi2 = main[main.Experiment == 'WHOI2']
